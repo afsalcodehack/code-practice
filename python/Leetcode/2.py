@@ -4,7 +4,6 @@ class ListNode:
         self.val = x
         self.next = None
 
-
 class Solution:
     @staticmethod
     def addTwoNumbers(l1, l2):
