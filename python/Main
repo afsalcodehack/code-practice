@@ -1,0 +1,33 @@
+a = [
+    {
+        "permissionId": 19,
+        "accessLevel": "Read/Write",
+        "userGroup": "User",
+        "name": "rafeeq new",
+        "host": "*",
+        "folderFile": "//..",
+        "comment": "some another cmt",
+        "isEdited": False,
+        "isNew": False,
+        "isDeleted": False,
+        "priorityId": 2,
+        "isEditMode": False
+    },
+    {
+        "permissionId": 20,
+        "accessLevel": "No Access",
+        "userGroup": "afsal m",
+        "name": "aslam",
+        "host": "*",
+        "folderFile": "//..",
+        "comment": "some new",
+        "isEdited": False,
+        "isNew": False,
+        "isDeleted": False,
+        "priorityId": 4,
+        "isEditMode": False
+    }
+]
+
+print(a)
+
