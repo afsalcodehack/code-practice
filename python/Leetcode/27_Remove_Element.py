@@ -12,13 +12,11 @@ class Solution:
                 if nums[_len] == val:
                     nums[_len] = '_'
                     nums[i] = '_'
-                    _count = _count - 2
                 else:
                     nums[i] = nums[_len]
                     nums[_len] = '_'
-                    _count = _count - 1
                 _len = _len - 1
-        print(nums , '->', _count)
+        print(nums , '->', _count )
         return _count
 
 
