@@ -6,7 +6,7 @@ class TreeNode:
 
 
 class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
+    def is_symmetric(self, root: TreeNode) -> bool:
         if root is None or (root.left is None and root.right is None):
             return True
         return self.helper(root.left, root.right)
@@ -14,7 +14,7 @@ class Solution:
     def helper(self, n1, n2):
 
         if (n1 is None and n2 is not None) or (n2 is None and n1 is not None):
-            return False;
+            return False
 
         if n1 is None or n2 is None:
             return
@@ -23,10 +23,10 @@ class Solution:
             return False
 
         result = self.helper(n1.left, n2.right)
-        if result == False:
+        if not result:
             return False
         result = self.helper(n1.right, n2.left)
-        if result == False:
+        if not result:
             return False
         return True
 
@@ -61,10 +61,10 @@ t4.right = TreeNode(2)
 
 
 service = Solution()
-print(service.isSymmetric(t)) #true
+print(service.is_symmetric(t)) #true
 
-print(service.isSymmetric(t2)) #false
+print(service.is_symmetric(t2)) #false
 
-print(service.isSymmetric(t3)) #true
+print(service.is_symmetric(t3)) #true
 
-print(service.isSymmetric(t4)) #false
+print(service.is_symmetric(t4)) #false
