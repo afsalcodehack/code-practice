@@ -1,6 +1,13 @@
 # Definition for singly-linked list.
 from typing import Optional
 
+# curr = head
+# prev = None
+# while curr:
+#     nxt = curr.next
+#     curr.next = prev
+#     prev = curr
+#     curr = nxt
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -9,12 +16,21 @@ class ListNode:
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        lastNode = head
+        prev, curr = None, head
 
-        while lastNode.next is not None:
-            lastNode = lastNode.next
+        while curr:
+            temp = curr.next
+            curr.next = prev
 
-        print(head.val, lastNode.val)
+            prev = curr
+            curr = temp
+
+        print('-------')
+        while prev is not None:
+            print(prev.val)
+            prev = prev.next
+
+
 
 
 head = ListNode(1, None)
