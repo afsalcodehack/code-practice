@@ -9,6 +9,8 @@ from typing import Optional
 #     prev = curr
 #     curr = nxt
 
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
