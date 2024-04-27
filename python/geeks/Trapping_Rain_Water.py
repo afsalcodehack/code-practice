@@ -5,23 +5,28 @@ class Solution:
         l = 0
         r = 1
         _sum = 0
-        max_sum = 0
+        max_sum = -1
+        max_index = 1
         blocks_count = 0
-        emptyspace = 0
-
+        zero_count = 0
+        result = 0
         while r < len(arr):
-            _sum = min(arr[l], arr[r]) * emptyspace
-            print(_sum , arr[l], arr[r])
-            if arr[r] >= arr[l]:
-                 max_sum += _sum - blocks_count
-                 _sum ,blocks_count, emptyspace = 0,0,0
-                 l = r
-                 r = l + 1
-            else:
-                emptyspace += 1
-                blocks_count += arr[r]
+            if arr[r] > 0:
+                _sum = (min(arr[l], arr[r]) * (r-l-1)) - blocks_count
+                print(_sum, arr[l], arr[r], blocks_count)
+                if _sum <= max_sum and arr[l] < arr[r]:
+                    l = max_index
+                    r = l+1
+                    result += max_sum
+                else:
+                    max_sum = _sum
+                    max_index = r
+
+            blocks_count += arr[r]
+
             r += 1
-        return max(max_sum, _sum)
+        return max(max_sum,result)
+
 
 driver =Solution()
 # print(driver.trappingWater([3,0,0,2,0,4], 6), 10)
