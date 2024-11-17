@@ -1,26 +1,27 @@
-from collections import Counter
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
 
-        _map = {}
+        _map1 = {}
+        _map2 = set()
 
-        for i in range(len(s)):
+        for i, v in enumerate(s):
 
-            if s[i] in _map:
-
-                if t[i] != _map[s[i]]:
+            if v in _map1:
+                if _map1[v] != t[i]:
                     return False
             else:
-                if t[i] in _map and _map[t[i]] == s[i]:
+                if t[i] in _map2:
                     return False
-                _map[s[i]] = t[i]
+                else:
+                    _map1[v] = t[i]
+                    _map2.add(t[i])
 
         return True
 
 
 driver = Solution()
-print(driver.isIsomorphic("egg", "add") , True)
+print(driver.isIsomorphic("egg", "add"), True)
 print(driver.isIsomorphic("foo", "bar"), False)
 print(driver.isIsomorphic("paper", "title"), True)
 print(driver.isIsomorphic("bbbaaaba", "aaabbbba"), False)
